@@ -1,0 +1,19 @@
+{
+  "name": "treechat-be",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sync server for the TreeChat browser extension",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}
