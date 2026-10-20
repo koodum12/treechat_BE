@@ -38,10 +38,10 @@ TEST_DATABASE_URL=postgresql://... npm test   # PostgreSQL로도 테스트
 2. **Cloudtype**: 새 프로젝트 → GitHub 저장소 `treechat_BE` 연결 → Node.js 선택
    - Node 버전: 20 이상
    - Start command: `npm start`
-   - Port: `8080`
+   - Port: `8000` (서버 기본 포트. `PORT` 환경변수로 바꿀 수 있음)
    - 환경변수: `DATABASE_URL`(1번 값), `NODE_ENV=production`, `TRUST_PROXY=1`
 3. 배포된 주소의 `/health`가 `{"ok":true}`인지 확인
-4. 확장 프로그램의 `extension/src/core/config.js`의 `SYNC_SERVER_URL`과 `manifest.json`의 `host_permissions`를 배포 주소로 바꿉니다.
+4. 확장 프로그램의 `extension/src/core/config.js`의 `SYNC_SERVER_URL`을 배포 주소로 바꿉니다. 서버가 CORS로 확장 프로그램 출처를 허용하므로 `host_permissions`는 필요 없습니다.
 
 연결 문자열에는 DB 비밀번호가 들어 있습니다. 저장소, 이슈, 채팅에 붙여 넣지 말고 Cloudtype 환경변수에만 넣으세요.
 

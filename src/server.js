@@ -2,7 +2,8 @@ import { createApp } from './app.js';
 import { createPostgresStore } from './stores/postgres.js';
 import { createMemoryStore } from './stores/memory.js';
 
-const port = Number(process.env.PORT) || 8080;
+// Cloudtype routes to port 8000 and does not always pass PORT through.
+const port = Number(process.env.PORT) || 8000;
 const trustProxy = Number(process.env.TRUST_PROXY ?? 1);
 // Extra origins besides chrome-extension://* (comma separated), e.g. a web dashboard later.
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? '').split(',').map((s) => s.trim()).filter(Boolean);
